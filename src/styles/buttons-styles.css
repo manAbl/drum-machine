@@ -1,0 +1,12 @@
+.buttons-wrapper {
+  width: 40%;
+  height: 40%;
+  border: none;
+  padding: 1rem;
+  background: rgb(76, 136, 196);
+  box-shadow: 0 0 20px darkblue;
+
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5,1fr);
+}

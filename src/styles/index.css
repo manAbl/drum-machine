@@ -1,4 +1,14 @@
+:root {
+  --transition: all 320ms ease;
+  --primary: slateblue;
+  --secundary: slategray;
+}
+
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+body, body div {
+  box-sizing: border-box;
 }

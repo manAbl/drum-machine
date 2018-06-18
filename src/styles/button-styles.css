@@ -1,0 +1,13 @@
+.btn {
+  padding:2rem;
+  height: 100%;
+  border: 1px dashed gray;
+  transition: var(--transition);
+  background: rgb(234, 238, 231);
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: white;
+  background: darkred;
+}
