@@ -9,9 +9,16 @@ const Buttons = ({ onClick }) => {
       <Button onClick={onClick} className="btn" value="s"/>
       <Button onClick={onClick} className="btn" value="a"/>
       <Button onClick={onClick} className="btn" value="d"/>
+      <Button onClick={onClick} className="btn" value="d"/>
+      <Button onClick={onClick} className="btn" value="d"/>
+      <Button onClick={onClick} className="btn" value="d"/>
+      <Button onClick={onClick} className="btn" value="d"/>
+      <Button onClick={onClick} className="btn" value="d"/>
+      <Button onClick={onClick} className="btn" value="d"/>
+
       <div className="input-group">
         <label htmlFor="volume"> Volume </label>
-        <input name="volume" type="radio" />
+        <input name="volume" type="range" />
       </div>
       <div className="input-group">
         <label htmlFor="power"> Power </label>
