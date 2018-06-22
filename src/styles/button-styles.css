@@ -1,13 +1,19 @@
 .btn {
-  padding:2rem;
+  --ts: transparent;
+
   height: 100%;
-  border: 1px dashed gray;
+  color: white;
+  padding: 2rem;
+  border-radius: 50%;
+  background: var(--ts);
+  border: var(--border-s);
+  font-variant: small-caps;
   transition: var(--transition);
-  background: rgb(234, 238, 231);
 }
 
 .btn:hover {
   cursor: pointer;
-  color: white;
-  background: darkred;
+  background: var(--secundary);
+  border: var(--border) !important;
+  box-shadow: 0 0 20px var(--secundary);
 }

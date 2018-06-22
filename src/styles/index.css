@@ -1,12 +1,15 @@
 :root {
-  --transition: all 320ms ease;
   --primary: slateblue;
-  --secundary: slategray;
+  --secundary: darkturquoise;
+  --border-s: 1px dashed white;
+  --transition: all 460ms ease;
+  --border: 1px dashed aquamarine;
 }
 
 body {
   margin: 0;
   padding: 0;
+  color: lightgray;
   overflow: hidden;
 }
 body, body div {
