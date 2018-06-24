@@ -4,17 +4,19 @@
   width: auto;
   height: 38%;
   padding: 1rem;
-  perspective: 1rem;
+  perspective: 800;
   border-radius: 4px;
   position: relative;
   background: var(--primary);
   border: 1px solid transparent;
   transition: var(--transition);
+  transform-style: preserve-3d;
   box-shadow:
-    -14px 20px 20px var(--bg),
-    -4px 2px 20px var(--bg);
+    -14px 20px 20px darkslateblue,
+    -4px 2px 20px darkslateblue,
+    -4px 2px 20px darkslateblue;
   transform: matrix( .9, .1, .4, .9, 21, 24);
-  animation: floating infinite cubic-bezier(0.4, 0, 1, 1) 2s;
+  animation: floating infinite cubic-bezier(0.42, 0, 0.68, 1.01) 4s;
 
   display: grid;
   grid-template-rows: auto;
@@ -24,17 +26,19 @@
 @keyframes floating {
   0% {
     transform: matrix( .9, .1, .4, .9, 21, 24) translateY(0);
+
   }
   50% {
-    transform: matrix( .9, .1, .4, .9, 21, 24) translateY(4px);
+    transform: matrix( .9, .1, .4, .9, 21, 24) translateY(40px);
   }
 }
 
+
 .buttons-wrapper:hover {
-  transform: none;
   animation: paused;
-  box-shadow: 0 0 20px var(--bg);
+/* box-shadow: -19px 19px 20px var(--bg), -7px 2px 20px var(--bg);*/
 }
+
 
 .buttons-wrapper:after,
 .buttons-wrapper:before {
