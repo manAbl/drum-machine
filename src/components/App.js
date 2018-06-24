@@ -6,18 +6,35 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      faseOne: true,
+      fase: true,
+      power: true
     };
   }
 
-  handleClick = () => {
+  handleChange = (e) => {
+    const checkboxSelected = e.target.name;
 
+    if(checkboxSelected === 'power') {
+      this.setState({
+        power: !this.state.power
+      });
+    }
+
+    else if(checkboxSelected === 'soundFx') {
+      this.setState({
+        fase: !this.state.fase
+      });
+    }
   }
 
-  onKeyPress = (e) => {
+  handleClick = (e) => {
+    alert('OUCH!!');
+  }
 
-    if(e.key == 'W') {
-      alert(' Presionaste ' + e.key);
+  handleKeyPress = (e) => {
+
+    if(e.key == 'w') {
+      console.log('Presionaste ' + e.key);
     }
 
     else if(e.key == 'A') {
@@ -58,7 +75,8 @@ class App extends Component {
   render() {
     return (
       <div className="app-wrapper">
-        <Buttons onClick={this.handleClick} onKeyPress={this.onKeyPress} />
+        <Buttons onClick={this.handleClick} powerSwitch={this.state.power}
+          onKeyPress={this.handleKeyPress} fase={this.state.fase} handleChange={this.handleChange} />
       </div>
     );
   }

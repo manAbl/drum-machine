@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../button/Button';
 import '../../styles/buttons-styles.css';
 
-const Buttons = ({ onClick, onKeyPress }) => {
+const Buttons = ({ onClick, onKeyPress, fase, powerSwitch, handleChange }) => {
   return (
     <div className="buttons-wrapper">
       <Button onClick={onClick} onKeyPress={onKeyPress} className="btn w" value="w"/>
@@ -20,12 +20,12 @@ const Buttons = ({ onClick, onKeyPress }) => {
         <input name="volume" type="range" />
       </div>
       <div className="input-group" id="switch-box">
-        <label htmlFor="power"> Power </label>
-        <input name="power" type="checkbox" />
+        <label htmlFor="soundFx"> SoundFX </label>
+        <input name="soundFx" type="checkbox" onChange={handleChange} checked={fase} />
       </div>
       <div className="input-group" id="power">
-        <label htmlFor="power"> SoundFX </label>
-        <input name="power" type="checkbox" />
+        <label htmlFor="power"> Power </label>
+        <input name="power" type="checkbox" onChange={handleChange} checked={powerSwitch} />
       </div>
     </div>
   );
