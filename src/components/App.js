@@ -31,7 +31,32 @@ class App extends Component {
     alert('OUCH!!');
   }
 
+  componentDidMount () {
+    document.addEventListener('keydown', this.handleKeyPress);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress);
+  }
+
+  playSound(e) {
+    const sound = document.getElementById(this.props.keyTrigger);
+    sound.currentTime = 0;
+    sound.play();
+    this.activatePad();
+    setTimeout(() => this.activatePad(), 100);
+    this.props.updateDisplay(this.props.clipId.replace(/-/g, ' '));
+  }
+
   handleKeyPress = (e) => {
+
+  /*
+
+  if (e.keyCode === this.props.keyCode) {
+      this.playSound();
+    }
+
+  */
 
     if(e.key == 'w') {
       console.log('Presionaste ' + e.key);
@@ -83,3 +108,6 @@ class App extends Component {
 };
 
 export default App;
+
+
+// <audio className='clip' id={this.props.keyTrigger} src={this.props.clip}></audio> ;
