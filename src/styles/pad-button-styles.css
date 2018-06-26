@@ -1,4 +1,4 @@
-.btn {
+.drum-pad {
   --ts: transparent;
 
   height: 100%;
@@ -11,7 +11,7 @@
   transition: var(--transition);
 }
 
-.btn:hover {
+.drum-pad:hover {
   cursor: pointer;
   background: var(--secundary);
   border: var(--border) !important;

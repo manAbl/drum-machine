@@ -1,0 +1,13 @@
+.controls-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control-group {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-flow: column-reverse nowrap;
+}

@@ -1,11 +1,64 @@
 .app-wrapper {
-  width: 100%;
-  height: 65.5rem;
+  --bg: darkslateblue;
+
+  width: 40%;
+  height: 38%;
+  padding: 1rem;
+  perspective: 800;
+  border-radius: 4px;
+  position: relative;
   background: var(--primary);
-
-
+  border: 1px solid transparent;
+  transition: var(--transition);
+  transform-style: preserve-3d;
+  box-shadow:
+    -14px 20px 20px darkslateblue,
+    -4px 2px 20px darkslateblue,
+    -4px 2px 20px darkslateblue;
+  transform: matrix( .9, .1, .4, .9, 21, 24);
+  animation: floating infinite cubic-bezier(0.42, 0, 0.68, 1.01) 4s;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-flow: column nowrap;
+}
+
+@keyframes floating {
+  0% {
+    transform: matrix( .9, .1, .4, .9, 21, 24) translateY(0);
+  }
+
+  50% {
+    transform: matrix( .9, .1, .4, .9, 21, 24) translateY(40px);
+  }
+}
+
+
+.app-wrapper:hover {
+  animation: paused;
+/* box-shadow: -19px 19px 20px var(--bg), -7px 2px 20px var(--bg);*/
+}
+
+
+.app-wrapper:after,
+.app-wrapper:before {
+  content: '';
+  position: absolute;
+  background: #6150c7;
+}
+
+.app-wrapper:before {
+  left: 48%;
+  z-index: 1;
+  width: 10px;
+  height: 149%;
+  bottom: -75.5%;
+  transform: rotateZ(-89deg) skew(1deg, 52deg);
+}
+
+.app-wrapper:after {
+  left: 0;
+  z-index: 2;
+  width: 10px;
+  height: 99.9%;
+  transform: skew(0deg, -45deg) translate(-10px, -19px);
 }

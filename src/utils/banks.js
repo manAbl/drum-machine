@@ -1,4 +1,4 @@
-const faseOne = [{
+const bankOne = [{
     keyCode: 81,
     keyTrigger: 'Q',
     id: 'Heater-1',
@@ -46,7 +46,7 @@ const faseOne = [{
   },
 ];
 
-const faseTwo = [{
+const bankTwo = [{
   keyCode: 81,
   keyTrigger: 'Q',
   id: 'Chord-1',
