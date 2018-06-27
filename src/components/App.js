@@ -118,9 +118,10 @@ class App extends Component {
   }
 
   handlePadBankChange = () => {
+    const { power, currentPadBankId } = this.state;
 
-   if (this.state.power) {
-      this.state.currentPadBankId === 'Heater Kit' ?
+   if (power) {
+      currentPadBankId === 'Heater Kit' ?
         this.setState({
           // eslint-disable-next-line
           currentPadBank: bankTwo,
