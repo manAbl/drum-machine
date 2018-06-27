@@ -4,7 +4,6 @@
   width: 40%;
   height: 38%;
   padding: 1rem;
-  perspective: 800;
   border-radius: 4px;
   position: relative;
   background: var(--primary);
@@ -12,14 +11,15 @@
   transition: var(--transition);
   transform-style: preserve-3d;
   box-shadow:
-    -14px 20px 20px darkslateblue,
-    -4px 2px 20px darkslateblue,
-    -4px 2px 20px darkslateblue;
+    -14px 20px 20px var(--bg),
+    -4px 2px 20px var(--bg),
+    -4px 2px 20px var(--bg);
   transform: matrix( .9, .1, .4, .9, 21, 24);
   animation: floating infinite cubic-bezier(0.42, 0, 0.68, 1.01) 4s;
 
   display: flex;
   flex-flow: column nowrap;
+  justify-content: space-around;
 }
 
 @keyframes floating {
@@ -31,7 +31,6 @@
     transform: matrix( .9, .1, .4, .9, 21, 24) translateY(40px);
   }
 }
-
 
 .app-wrapper:hover {
   animation: paused;
@@ -60,5 +59,5 @@
   z-index: 2;
   width: 10px;
   height: 99.9%;
-  transform: skew(0deg, -45deg) translate(-10px, -19px);
+  transform: skew(0deg, -45deg) translate(-10px, -7px);
 }

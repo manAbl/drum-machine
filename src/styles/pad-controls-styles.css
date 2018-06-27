@@ -5,6 +5,12 @@
   align-items: center;
 }
 
+#display {
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+
 .control-group {
   display: flex;
   text-align: center;

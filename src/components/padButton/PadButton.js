@@ -33,12 +33,12 @@ class PadButton  extends Component {
     const { clip, keyTrigger, playSound, clipId } = this.props;
 
     return (
-      <button className="drum-pad"
+      <div className="drum-pad"
         id={clipId}
         onClick={playSound}>
         <audio className='clip' id={keyTrigger} src={clip}></audio>
         { keyTrigger }
-      </button>
+      </div>
     );
   }
 };

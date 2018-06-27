@@ -19,6 +19,7 @@ body, body div {
 #root {
   width: 100%;
   height: 65rem;
+  perspective: 800;
   background: var(--primary);
 
   display: flex;

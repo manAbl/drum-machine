@@ -3,7 +3,7 @@
 
   height: 100%;
   color: white;
-  padding: 2rem;
+  padding: 2.2rem;
   border-radius: 50%;
   background: var(--ts);
   border: var(--border-s);
@@ -11,9 +11,13 @@
   transition: var(--transition);
 }
 
-.drum-pad:hover {
-  cursor: pointer;
+.drum-pad:hover,
+.drum-pad:active {
   background: var(--secundary);
   border: var(--border) !important;
   box-shadow: 0 0 20px var(--secundary);
+}
+
+.drum-pad:hover {
+  cursor: pointer;
 }
