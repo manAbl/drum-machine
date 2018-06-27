@@ -153,6 +153,14 @@ class App extends Component {
     });
   }
 
+  displayUpdater(name) {
+    if (this.state.power) {
+      this.setState({
+        display: name
+      });
+    }
+  }
+
   render() {
     const { power, currentPadBank, display, sliderVal } = this.state;
 
@@ -162,7 +170,7 @@ class App extends Component {
           power={power}
           playSound={this.playSound}
           currentPadBank={currentPadBank}
-          updateDisplay={this.updateDisplay}
+          updateDisplay={this.displayUpdater}
           handleKeyPress={this.handleKeyPress}
          />
 
