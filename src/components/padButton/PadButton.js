@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
 import '../../styles/pad-button-styles.css';
 
+const activeStyle = {
+  backgroundColor: 'darkturquoise',
+  boxShadow: '0 0 20px darkturquoise'
+};
+
+const inactiveStyle = {
+  backgroundColor: 'transparent',
+};
+
 class PadButton  extends Component {
+   constructor(props) {
+    super(props);
+    this.state = {
+      padBgColor: inactiveStyle
+    };
+  }
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyPress);
@@ -11,11 +26,15 @@ class PadButton  extends Component {
     document.removeEventListener('keydown', this.handleKeyPress);
   }
 
-  handleKeyPress = e => {
-  const { keyCode } = this.props;
-
-    if (e.keyCode === keyCode) {
-      this.playSound();
+  activePad = () => {
+    if (this.props.power) {
+      this.state.padBgColor.backgroundColor === 'darkturquoise' ?
+        this.setState({
+          padBgColor: inactiveStyle
+        }) :
+        this.setState({
+          padBgColor: activeStyle
+        });
     }
   }
 
@@ -25,8 +44,18 @@ class PadButton  extends Component {
     const sound = document.getElementById(keyTrigger);
     sound.currentTime = 0;
     sound.play();
+    this.activePad();
+    setTimeout(() => this.activePad(), 360);
 
     updateDisplay(clipId.replace(/-/g, ' '));
+  }
+
+  handleKeyPress = e => {
+    const { keyCode } = this.props;
+
+    if (e.keyCode === keyCode) {
+      this.playSound();
+    }
   }
 
   render() {
@@ -35,7 +64,8 @@ class PadButton  extends Component {
     return (
       <div className="drum-pad"
         id={clipId}
-        onClick={playSound}>
+        onClick={playSound}
+        style={this.state.padBgColor}>
         <audio className='clip' id={keyTrigger} src={clip}></audio>
         { keyTrigger }
       </div>
